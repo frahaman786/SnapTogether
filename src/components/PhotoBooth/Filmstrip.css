@@ -1,0 +1,65 @@
+.shutter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.shutter {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--rose-bright), var(--rose) 60%, #a83a52 100%);
+  border: 3px solid rgba(255, 248, 239, 0.25);
+  box-shadow: 0 8px 18px -6px rgba(216, 84, 110, 0.6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.shutter:hover {
+  transform: scale(1.05);
+}
+
+.shutter:active {
+  transform: scale(0.94);
+}
+
+.shutter:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.shutter svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--cream);
+}
+
+.filmstrip {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 14px;
+  min-height: 52px;
+  flex-wrap: wrap;
+}
+
+.filmstrip .frame-thumb {
+  width: 46px;
+  height: 46px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 248, 239, 0.25);
+}
+
+.filmstrip .frame-slot {
+  width: 46px;
+  height: 46px;
+  border-radius: 6px;
+  border: 2px dashed rgba(255, 248, 239, 0.2);
+}

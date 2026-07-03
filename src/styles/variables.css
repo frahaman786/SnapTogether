@@ -1,0 +1,23 @@
+:root {
+  --plum: #241726;
+  --plum-deep: #150d17;
+  --rose: #d8546e;
+  --rose-bright: #ff7a92;
+  --gold: #e8b84b;
+  --cream: #fff8ef;
+  --panel: #2f1e33;
+  --line: rgba(255, 248, 239, 0.14);
+  --good: #7ed9a4;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'Space Grotesk', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+
+  --shadow-panel: 0 20px 40px -20px rgba(0, 0, 0, 0.5), inset 0 0 0 1px var(--line);
+  --shadow-chassis: 0 30px 60px -20px rgba(0, 0, 0, 0.6), inset 0 0 0 1px var(--line);
+}
