@@ -1,22 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SEO from '../components/Common/SEO/SEO';
-import Button from '../components/Common/Button/Button';
 import './Contact.css';
 
+// Paste the src URL from your Google Form's embed snippet (Send → <> Embed HTML) here.
+const GOOGLE_FORM_EMBED_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeoBLBdfyhR4RuPZRSyPUQyMpyq7TpdmPXarwDFJaPjz6HAmQ/viewform?embedded=true';
+
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Placeholder submit — wire this up to a real endpoint or service later.
-    setSubmitted(true);
-  };
-
   return (
     <div className="static-page">
       <SEO
@@ -31,27 +20,19 @@ export default function Contact() {
           back to you.
         </p>
 
-        {submitted ? (
-          <div className="contact-success">
-            Thanks, {form.name || 'friend'} — your message has been queued. We'll reply at {form.email}.
-          </div>
-        ) : (
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <label>
-              Name
-              <input type="text" name="name" value={form.name} onChange={handleChange} required />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" value={form.email} onChange={handleChange} required />
-            </label>
-            <label>
-              Message
-              <textarea name="message" rows={5} value={form.message} onChange={handleChange} required />
-            </label>
-            <Button type="submit" variant="primary" wide>Send message</Button>
-          </form>
-        )}
+        <div className="contact-form-embed">
+          <iframe
+            src={GOOGLE_FORM_EMBED_URL}
+            title="SnapTogether contact form"
+            width="100%"
+            height="820"
+            frameBorder="0"
+            marginHeight="0"
+            marginWidth="0"
+          >
+            Loading…
+          </iframe>
+        </div>
       </div>
     </div>
   );
